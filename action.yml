@@ -44,5 +44,5 @@ runs:
         mise_file: ${{ inputs.mise_file }}
 
     - name: Verify Tool Installation
-      run: ${{ github.action_path }}/scripts/verify-mise-tool.bash "${{ inputs.working_directory }}/${{ inputs.mise_file }}" "${{ inputs.tool_name }}" "${{ inputs.version_command }}"
+      run: ${{ github.action_path }}/src/verify.sh "${{ inputs.working_directory }}/${{ inputs.mise_file }}" "${{ inputs.tool_name }}" "${{ inputs.version_command }}"
       shell: bash

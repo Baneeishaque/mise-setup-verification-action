@@ -10,16 +10,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create Dummy mise.toml
-        run: |
-          echo '[tools]' > mise.toml
-          echo 'python = "3.12.1"' >> mise.toml
-
       - name: Run Action (Self-Test)
         uses: ./
         with:
           mise_version: '2025.12.9'
-          working_directory: '.'
+          working_directory: 'tests'
           tool_name: 'python'
           version_command: 'python -V'
           install: 'true'

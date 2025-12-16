@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-# verify-mise-tool.bash
-# Usage: ./verify-mise-tool.bash <mise_toml_path> <tool_name> <version_command>
+# verify.sh
+# Usage: ./verify.sh <mise_toml_path> <tool_name> <version_command>
 
 MISE_TOML="${1:?mise.toml path required}"
 TOOL_NAME="${2:?tool name required}"
