@@ -49,7 +49,7 @@ fi
 # 6. Execute version check
 echo "Running version check: $VERSION_COMMAND"
 read -r -a CMD <<< "$VERSION_COMMAND"
-ACTUAL_VERSION_OUTPUT=$(MISE_CONFIG_FILE="$MISE_TOML" mise exec -- "${CMD[@]}" 2>&1)
+ACTUAL_VERSION_OUTPUT=$(MISE_CONFIG_FILE="$MISE_TOML" mise exec --verbose -- "${CMD[@]}" 2>&1)
 echo "Output: $ACTUAL_VERSION_OUTPUT"
 
 # 7. Check if output contains expected version

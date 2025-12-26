@@ -35,13 +35,14 @@ runs:
   using: "composite"
   steps:
     - name: Set up mise
-      uses: jdx/mise-action@v3
+      uses: jdx/mise-action@v3.5.1
       with:
         version: ${{ inputs.mise_version }}
         install: ${{ inputs.install }}
         cache: ${{ inputs.cache }}
         working_directory: ${{ inputs.working_directory }}
-        mise_toml: ${{ inputs.mise_file }}
+      env:
+        MISE_CONFIG_FILE: ${{ inputs.working_directory }}/${{ inputs.mise_file }}
 
     - name: Verify Tool Installation
       run: ${{ github.action_path }}/src/verify.sh "${{ inputs.working_directory }}/${{ inputs.mise_file }}" "${{ inputs.tool_name }}" "${{ inputs.version_command }}"
