@@ -23,7 +23,7 @@ jobs:
           scandir: './src'
           
       - name: Run actionlint
-        uses: reviewdog/action-actionlint@v1.71.1
+        uses: reviewdog/action-actionlint@v1.69.1
         with:
           fail_level: error
 
